@@ -8,18 +8,6 @@ import React, { useState } from 'react';
 const Expenses = (props) => {
     const [filteredYear, setFilteredYear] = useState('2020');
 
-    let expense_items = [];
-
-    props.data.forEach(expenseItem => {
-        expense_items.push(
-            <ExpenseItem
-                key={expenseItem.title}
-                title={expenseItem.title}
-                amount={expenseItem.amount}
-                date={expenseItem.date}>
-            </ExpenseItem>);
-    });
-
     const filterChangeHandler = selectedYear => {
         setFilteredYear(selectedYear);
     };
@@ -28,7 +16,14 @@ const Expenses = (props) => {
         <div>
             <Card className="expenses">
                 <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
-                {expense_items}
+                {props.data.map(expense => (
+                    <ExpenseItem
+                        key={expense.title}
+                        title={expense.title}
+                        amount={expense.amount}
+                        date={expense.date}
+                    />
+                ))}
             </Card>
         </div>
     );
