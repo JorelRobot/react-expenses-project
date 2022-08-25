@@ -6,7 +6,8 @@ import React, { useState } from 'react';
 const DUMMY_EXPENSES = [
   { title: 'Car Insurance', date: new Date(2022, 2, 28), amount: 294.67 },
   { title: 'New TV', date: new Date(2022, 8, 15), amount: 799.49 },
-  { title: 'New Desk', date: new Date(2022, 11, 3), amount: 450 }
+  { title: 'New Desk', date: new Date(2022, 11, 3), amount: 450 },
+  { title: 'Mexican Food', date: new Date(2021, 9, 15), amount: 1.5 }
 ];
 
 function App() {
